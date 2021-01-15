@@ -1,6 +1,6 @@
 # Basics
 
-Probabilistic programming is about programming with measures. Probability distributions _are_ measures (e.g. functions from subsets of something called a Borel algebra to the positive real numbers which some mathematical properties which I won't get into).
+Probabilistic programming is about programming with measures. Probability distributions _are_ measures (e.g. functions from subsets of something called a $\sigma$-algebra to the positive real numbers which some mathematical properties which I won't get into).
 
 So the whole point of probabilistic programming is to make it easier for users to specify measures, and do some common operations on them.
 
