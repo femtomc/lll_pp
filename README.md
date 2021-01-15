@@ -77,7 +77,7 @@ Here are a couple of philosophies:
 
 0. Compute the integral exactly or approximately using analytic properties of `P(A, B)` $\rightarrow$ (Exact enumeration/variable elimination and belief propagation)
 1. Compute the integral by randomly walking in a high-dimensional space $\rightarrow$ (Markov chain Monte Carlo)
-2. Compute the integral by transforming it into an optimization problem with an approximate solution $\rightarrow$ (Variational inference)
+2. Compute the integral by transforming it into an optimization problem whose solution is an approximation to the posterior $\rightarrow$ (Variational inference)
 3. Factor the integral by making assumptions about `P(A, B)` and then use (0), (1), or (2) $\rightarrow$ (Graphical models)
 
 (0, 1, 2) really represent concrete inference methodologies, (3) is really about modeling assumptions. 
