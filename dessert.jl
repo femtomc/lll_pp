@@ -55,22 +55,17 @@ using Flux
 using GenFlux
 using Random
 
-# Dumb fix because Gen uses custom distributions.
-# They only like Float64.
-glorot_uniform64(rng::AbstractRNG, dims...) = (rand(rng, Float64, dims...) .- 0.5f0) .* sqrt(24.0f0 / sum(Flux.nfan(dims...)))
-glorot_uniform64(dims...) = glorot_uniform64(Random.GLOBAL_RNG, dims...)
-glorot_uniform64(rng::AbstractRNG) = (dims...) -> glorot_uniform64(rng, dims...)
-
-g = @genflux Chain(Conv((5, 5), 1 => 10; init = glorot_uniform64),
+g = @genflux Chain(Conv((5, 5), 1 => 10),
                    MaxPool((2, 2)),
                    x -> relu.(x),
-                   Conv((5, 5), 10 => 20; init = glorot_uniform64),
+                   Conv((5, 5), 10 => 20),
                    x -> relu.(x),
                    MaxPool((2, 2)),
                    x -> flatten(x),
-                   Dense(320, 50; initW = glorot_uniform64),
-                   Dense(50, 10; initW = glorot_uniform64),
-                   softmax)
+                   Dense(320, 50),
+                   Dense(50, 10),
+                   softmax) |> Flux.f64
+display(g)
 
 # Probabilities drawn from deep network, used to parametrized a categorical distribution on labels directly in Gen.
 @gen function f(xs::Vector{Float64})

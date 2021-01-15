@@ -83,3 +83,9 @@ Here are a couple of philosophies:
 (0, 1, 2) really represent concrete inference methodologies, (3) is really about modeling assumptions. 
 
 > Note the interplay! Modeling assumptions can reduce the difficulty of performing inference - more effective inference methodologies can expand the expressiveness of modeling, etc.
+
+# Advanced
+
+That's generically the setup for probabilistic programming. It's interesting to program with measures, it turns out that restricting probability measures to subsets of the measurable space is a useful mathematical model for reasoning, but actually performing this computation is hard because it describes an integral.
+
+We'll now turn to explore a class of probabilistic programming systems which express measures over finite dictionaries called _choice maps_. This space of measures turns out to be useful from an expressivity standpoint, as the class of joint distributions which this space encompasses is quite broad. Of course, (as is typically the case, although not always the case) - the increase in expressivity comes at a cost. It is difficult to perform inference in this space, so programmers who explore modeling and inference design in this space must explore advanced approximate inference strategies. It's unlikely that we will get into these strategies today - but perhaps a future LLL. For those interesting, I can also provide references.

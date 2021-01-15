@@ -9,7 +9,8 @@ using Jaynes
 ##### Syntax breakdown
 #####
 
-# A ~ B : denotes a random choice. This desugars to: A = trace(:A, B) which is a special call that interacts with PP system (it _carries_ the PP semantics if you're familiar with effects systems).
+# A ~ B : denotes a random choice. 
+# This desugars to: A = trace(:A, B) which is a special call that interacts with PP system (it _carries_ the PP semantics if you're familiar with effects systems).
 # (DefaultPipeline, etc) : denotes compilation and typing options.
 
 #####
